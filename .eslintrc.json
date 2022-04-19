@@ -1,6 +1,8 @@
 {
   "env": {
+    "commonjs": true,
     "node": true,
+    "mocha": true,
     "es2021": true
   },
   "extends": ["eslint:recommended", "prettier"],
