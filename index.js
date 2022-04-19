@@ -1,8 +1,6 @@
-// start script msg
+const fs = require('fs');
 
-let fs = require('fs');
 const fsPromises = fs.promises;
-let input;
 
 const fileFilter = (list, input) => {
   return list.filter((file) => file.match(input));
@@ -37,8 +35,9 @@ const getAllDocs = async (path) => {
   return fileArray;
 };
 
+let input;
 try {
-  input = new RegExp(process.argv[2]);
+  input = new RegExp(`${process.argv[2]}$`);
 } catch (e) {
   console.log('Invalid Input', e);
 }
@@ -52,22 +51,3 @@ try {
 })();
 
 process.exitCode = 0;
-
-/*
-const readDataArray = async (screeningResults) => {
-  let fileArray = [];
-  console.log(screeningResults);
-  for (const data of screeningResults) {
-    if (fs.existsSync(`./${data}`)) {
-      if (fs.statSync(`./${data}`).isDirectory()) {
-        let x = await getAllDocs(data);
-        fileArray.push(x);
-        fileArray = fileArray.flat();
-      } else {
-        fileArray.push(data);
-      }
-    }
-  }
-  return fileArray;
-};
-*/
