@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "prepare": "husky install",
     "lint": "prettier --check .",
     "format": "prettier --write ."
@@ -23,6 +23,10 @@
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.0",
+    "mocha": "^9.2.2",
     "prettier": "2.6.2"
+  },
+  "dependencies": {
+    "chai": "^4.3.6"
   }
 }
